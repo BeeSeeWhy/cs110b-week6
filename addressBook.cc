@@ -47,10 +47,9 @@ void addPerson() {
     getline(cin, newPerson->address);
 
     insertPerson(newPerson);
-    printAddressBook();
 }
 
-void buildList() {
+/*void buildList() {
     struct Person* current = NULL;
 
     //allocate memory for new entries
@@ -74,50 +73,7 @@ void buildList() {
     current->phone = "323-555-5555";
     current->address = "1070 272nd Street, Aldergrove, BC V4W 2P8, Canada";
     insertPerson(current);
-
-    //user enter address book
-    /*cout << "Enter the first name : ";
-    getline(cin, current->first_name);
-
-    cout << setw(23) << left << "Enter the last name : ";
-    getline(cin, current->last_name);
-
-    cout << setw(23) << left << "Enter phone number : ";
-    getline(cin, current->phone);
-
-    cout << setw(23) << left << "Enter address : ";
-    getline(cin, current->address);
-    insertPerson(current);
-    cout << endl;
-
-    cout << "Enter the first name : ";
-    getline(cin, current->first_name);
-
-    cout << setw(23) << left << "Enter the last name : ";
-    getline(cin, current->last_name);
-
-    cout << setw(23) << left << "Enter phone number : ";
-    getline(cin, current->phone);
-
-    cout << setw(23) << left << "Enter address : ";
-    getline(cin, current->address);
-    insertPerson(current);
-    cout << endl;
-
-    cout << "Enter the first name : ";
-    getline(cin, current->first_name);
-
-    cout << setw(23) << left << "Enter the last name : ";
-    getline(cin, current->last_name);
-
-    cout << setw(23) << left << "Enter phone number : ";
-    getline(cin, current->phone);
-
-    cout << setw(23) << left << "Enter address : ";
-    getline(cin, current->address);
-    insertPerson(current);
-    cout << endl; */
-}
+}*/
 
 //edit menu
 int editChoice() {
@@ -227,7 +183,7 @@ void menu() {
         case 5 :    search();
                     break;
       }
-   }while (choice != 6);
+   } while (choice != 6);
 }
 
 int menuChoice () {
@@ -259,7 +215,7 @@ void printAddressBook() {
   }
 }
 
-//prints one entry 
+//prints one entry
 void printEntry(struct Person* iter) {
   cout << endl;
   cout << iter->last_name << ", ";
@@ -405,8 +361,11 @@ void searchMenu(struct Person* iter) {
 }
 
 int main() {
-    buildList();
-    //printAddressBook();
+    cout << "Enter three persons" << endl;
+    for(int i = 0; i < 3; i++) {
+      addPerson();
+    }
+
     menu();
 
     return 0;
